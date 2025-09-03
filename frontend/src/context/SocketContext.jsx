@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { useAuthContext } from "./AuthContext";
 import io from "socket.io-client";
+import { BASE_URL } from "../config";
 
 const SocketContext = createContext();
 
@@ -13,9 +14,10 @@ export const SocketContextProvider = ({ children }) => {
 
   useEffect(() => {
     if (authUser) {
-      const backendURL =
-        import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
-      const newSocket = io(backendURL, {
+
+       const socketUrl = BASE_URL.replace("/api", "");
+     
+      const newSocket = io(socketUrl, {
         query: {
           userId: authUser._id,
         },

@@ -4,6 +4,16 @@ import dotenv from "dotenv";
 dotenv.config();
 import cookieParser from "cookie-parser";
 
+import cors from "cors";
+
+const FRONTEND_URL = process.env.FRONTEND_URL || "https://chatting-app-livid-eight.vercel.app/";
+
+app.use(cors({
+  origin: [FRONTEND_URL, "http://localhost:3000"],
+  credentials: true,
+}));
+
+
 import authRoutes from "./routes/auth.routes.js";
 import messageRoutes from "./routes/message.routes.js";
 import userRoutes from "./routes/user.routes.js";
