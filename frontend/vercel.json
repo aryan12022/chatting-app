@@ -1,0 +1,15 @@
+{
+	"rewrites": [
+		{
+			"source": "/api/(.*)",
+			"destination": "https://chatting-app-5d6x.onrender.com/api/$1"
+		},
+		{
+			"source": "/socket.io/(.*)",
+			"destination": "https://chatting-app-5d6x.onrender.com/socket.io/$1"
+		}
+	],
+	"static": {
+		"public": "public"
+	}
+}

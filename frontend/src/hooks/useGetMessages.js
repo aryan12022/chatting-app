@@ -12,7 +12,7 @@ const useGetMessages = () => {
 			setLoading(true);
 			try {
 				//const res = await fetch(`${BASE_URL}/messages/${selectedConversation._id}`);
-				const res = await fetch(`${BASE_URL}/messages/${selectedConversation._id}`, {
+				const res = await fetch(`${BASE_URL}/api/messages/${selectedConversation._id}`, {
           credentials: "include",
         });
 				const data = await res.json();
