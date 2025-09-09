@@ -9,7 +9,7 @@ import cors from "cors";
 const FRONTEND_URL = process.env.FRONTEND_URL || "https://chatting-app-livid-eight.vercel.app/";
 
 app.use(cors({
-  origin: [FRONTEND_URL, "http://localhost:3000"],
+  origin: ["*"],
   credentials: true,
 }));
 
